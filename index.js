@@ -1,26 +1,9 @@
-const choo = require('choo')
-const html = require('choo/html')
-const app = choo()
+const app = require('./src/app')
+const yo = require('yo-yo')
 
-app.model({
-  state: { title: 'Not quite set yet' },
-  reducers: {
-    update: (data, state) => ({ title: data })
-  }
-})
+const mainEl = document.getElementById('app')
+if (mainEl == null) {
+  document.body.appendChild(yo`<main id="main"></main>`)
+}
 
-const mainView = (state, prev, send) => html`
-  <main>
-    <h1>Title: ${state.title}</h1>
-    <input
-      type="text"
-      oninput=${(e) => send('update', e.target.value)}>
-  </main>
-`
-
-app.router((route) => [
-  route('/', mainView)
-])
-
-const tree = app.start()
-document.body.appendChild(tree)
+app(false).start('#main')

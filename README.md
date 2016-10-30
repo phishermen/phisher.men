@@ -38,14 +38,22 @@ The frontend is statically hosted on AWS S3, we're are already using AWS for the
  	
  2. Terraform will require AWS credentials in order to modify the necessary cloud resources. To provide these create a `.aws_creds` file in the project directory that looks like this: 
 
- 	```
+ 	```ini
  	[phisher.men]
 aws_access_key_id=<your_access_key>
 aws_secret_access_key=<hour_secret_key>
  	```
  	
- 3. A new version can then be deployed by simply running: 
+ 3. In order to deploy a new version, you'll first need to build it:
+
+ 	```
+ 	$ npm run build 
+ 	```
+
+ 4. The newly build artifacts can then be published by letting Terraform do its thing, a publicly available endpoint will be returned:
 
  ```
- terraform apply
+ $ terraform apply
+ ...
+ > dev_s3_endpoint = http://...
  ```
