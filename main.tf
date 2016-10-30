@@ -14,7 +14,7 @@ resource "random_id" "dev_bucket_prefix" {
 }
 
 #
-# Development endpoint for public testing (A/B)
+# Development endpoint for public testing
 #
 output "dev_s3_endpoint" {
   value = "http://${aws_s3_bucket.dev_frontend.website_endpoint}"
