@@ -4,7 +4,9 @@
   "description": "A service for simple phishing simulation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "budo index.js:index.js -p 8080 --open -- -t es2020",
+    "build": "mkdir -p dist && browserify -t es2020 -o dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,9 +26,6 @@
   "homepage": "https://github.com/phishermen/phisher.men#readme",
   "dependencies": {
     "choo": "^3.3.0"
-  },
-  "scripts": {
-    "start": "budo index.js -p 8080 --open -- -t es2020"
   },
   "devDependencies": {
     "budo": "^9.2.1",
