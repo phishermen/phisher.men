@@ -1,0 +1,38 @@
+:host {
+    margin: 0;
+}
+
+:host input {
+    font-family: 'Roboto';
+    font-size: 25px;
+
+    padding: 15px;
+}
+
+:host input[type=email] {
+    border: 1px solid #42BEE2;
+    color: #113357;
+    width: 400px;
+    padding-left: 30px;
+
+    border-right: none;
+}
+
+:host button[type=submit] {
+    border: 1px solid #D44815;
+    background: #FB5F26;
+    color: white;
+
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+
+    font-family: 'Roboto', 'FontAwesome';
+
+    cursor: pointer;
+
+    transition: background-color 0.5s ease;
+}
+
+:host button[type=submit]:hover {
+    background: #D65222;
+}

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "budo index.js:index.js -p 8080 --open -- -t es2020",
-    "build": "mkdir -p dist && node build.js > dist/index.html && browserify index.js -t es2020 -o dist/index.js"
+    "build": "mkdir -p dist && node build.js > dist/index.html && browserify index.js -t es2020 -t sheetify/transform -o dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/phishermen/phisher.men#readme",
   "dependencies": {
-    "choo": "^3.3.0"
+    "choo": "^3.3.0",
+    "sheetify": "^5.2.0"
   },
   "devDependencies": {
     "budo": "^9.2.1",
